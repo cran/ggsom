@@ -12,7 +12,6 @@
 #'
 #' @examples
 #'
-#'
 #' library(ggthemes)
 #' library(ggsom)
 #' library(ggplot2)
@@ -20,7 +19,7 @@
 #'
 #' iris_som <- som(scale(iris[1:4]), grid = somgrid(6, 4, 'rectangular'))
 #'
-#' ggsom_ribbon(aes_som(iris_som, cutree_value = 3), FALSE)
+#' ggsom_ribbon(aes_som(iris_som, cutree_value=3), FALSE)
 #'
 #' @return ggplot visualization
 #'
@@ -35,8 +34,8 @@ ggsom_ribbon <- function(aes_som, color) {
   ), alpha = 0.5) + facet_grid(y ~ x) +
     `%|SCALE|%`(color) + theme_few(10) + geom_text(
       aes(y = y, x = x, label = sum),
-      x = 3.2,
-      y = 9.7,
+      x = 2.5,
+      y = 6,
       size = 4,
       family = "sans",
       fontface = "plain",

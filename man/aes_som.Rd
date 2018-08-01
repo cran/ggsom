@@ -9,7 +9,7 @@ aes_som(model_som, ...)
 \arguments{
 \item{model_som}{object of self-organising maps (SOMs) package}
 
-\item{...}{list of paramters}
+\item{...}{cutree_value division number of clusters}
 }
 \value{
 Model data that is used in plots

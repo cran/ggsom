@@ -4,7 +4,7 @@
 #
 #' @param model_som object of self-organising maps (SOMs) package
 #'
-#' @param ... list of paramters
+#' @param ... cutree_value division number of clusters
 #'
 #' @import tidyverse
 #' @import dplyr
@@ -22,10 +22,10 @@
 #' @export
 aes_som <- function(model_som, ...) {
     params <- list(...)
-    #browser()
-    # Check if the variable is a SOMs object
 
+    # Check if the variable is a SOMs object
     `%|K|%`(model_som)
+
     # Creating a data frame from the SOMs object
     model_som_values <-
       data.frame(
@@ -58,11 +58,10 @@ aes_som <- function(model_som, ...) {
       return(model_result)
     }
 
-
+    # left join on model values and model pts by unit.class
     model_result <-
       dplyr::left_join(model_som_values, model_som_pts, by = "unit.class") %>%
       gather(var, values,-id,-unit.class,-sum,-x,-y)
-
 
 }
 
